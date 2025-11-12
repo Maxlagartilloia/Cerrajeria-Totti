@@ -2,359 +2,200 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cerrajería Totti | Puertas y Ventanas Metálicas • Soldadura Profesional</title>
 
-  <!-- SEO -->
+  <!-- Meta SEO -->
   <meta name="description" content="Diseño a medida, instalación segura y acabados de primera en estructuras metálicas, portones y soldadura profesional (TIG, MIG, Eléctrica) en Shushufindi, Ecuador.">
-  <meta name="keywords" content="cerrajería, soldadura, estructuras metálicas, puertas, portones, ventanas, TIG, MIG, Shushufindi, Tito Carvajal">
+  <meta name="keywords" content="cerrajería, soldadura, estructuras metálicas, puertas de seguridad, portones, ventanas, TIG, MIG, Shushufindi, Tito Carvajal">
   <meta name="author" content="Tito Carvajal - Cerrajería Totti">
+  <!-- Vista previa redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cerrajeriatotti.crisslombeida.com/">
+  <meta property="og:title" content="Cerrajería Totti | Soldadura y Estructuras Metálicas">
+  <meta property="og:description" content="Puertas, portones, techos, cerramientos y estructuras metálicas con soldadura profesional. ¡Cotiza directo por WhatsApp!">
+  <meta property="og:image" content="https://i.postimg.cc/yx2KSfQ2/logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Fuentes y utilidades -->
+  <!-- Fuentes y librerías -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    :root{--color-blue:#123B6B;--color-orange:#FF8A27;--color-dark:#131313;}
-    html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
-    body{font-family:'Inter',sans-serif;background:#131313;color:#fff;line-height:1.6;margin:0;overflow-x:hidden;}
-    section{content-visibility:auto;contain-intrinsic-size:1px 1000px;}
-    .bg-primary-blue{background:var(--color-blue);}
-    .bg-secondary-orange{background:var(--color-orange);}
-    .text-secondary-orange{color:var(--color-orange);}
-    .glass-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);box-shadow:0 6px 24px rgba(0,0,0,.25);}
-    @supports(backdrop-filter:blur(5px)){.glass-card{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}}
-    .hot-metal-bg{position:relative;background:linear-gradient(135deg,#131313 0%,#0a0a0a 100%);}
-    .hot-metal-bg::before{content:"";position:absolute;inset:0;background:
-      radial-gradient(circle at 10% 20%,rgba(255,138,39,.10)0%,transparent50%),
-      radial-gradient(circle at 80% 90%,rgba(255,138,39,.05)0%,transparent50%);
-      animation:pulse 18s ease-in-out infinite;pointer-events:none;z-index:-1;}
-    @keyframes pulse{0%{opacity:.5;transform:scale(1)}50%{opacity:.8;transform:scale(1.05)}100%{opacity:.5;transform:scale(1)}}
-    @media(max-width:768px){.hot-metal-bg::before{animation:none!important;}}
-    .btn-hover-orange:hover{background:#ffaa60;transform:translateY(-2px);box-shadow:0 4px 15px rgba(255,138,39,.4);}
-    .service-icon{transition:color .3s,transform .3s;}
-    .service-card:hover .service-icon{color:var(--color-orange);transform:scale(1.1);}
-    .logo-link img{height:8rem;transition:transform .3s;}
-    @media(max-width:768px){.logo-link img{height:4rem;}}
-    #gallery-modal{z-index:100;background:rgba(0,0,0,.75);display:none;}
-    #modal-image{max-height:90vh;max-width:90vw;border-radius:.75rem;box-shadow:0 25px 50px -12px rgba(255,138,39,.5);}
-    .gallery-item{aspect-ratio:4/3;object-fit:cover;border-radius:.75rem;}
-    .input{width:100%;padding:.75rem;background:rgba(255,255,255,.05);border:1px solid #3f3f46;border-radius:.5rem;color:#fff;}
-    .input:focus{outline:none;border-color:var(--color-orange);box-shadow:0 0 0 3px rgba(255,138,39,.25);}
-    select.input option{color:#000;}
+    :root{
+      --color-blue:#123B6B;
+      --color-orange:#FF8A27;
+      --color-dark-bg:#131313;
+    }
+
+    html{ scroll-behavior:smooth; -webkit-overflow-scrolling:touch; }
+    body{
+      font-family:'Inter',sans-serif;
+      background-color:var(--color-dark-bg);
+      color:#fff; line-height:1.6; margin:0; overflow-x:hidden;
+    }
+    section{ content-visibility:auto; contain-intrinsic-size:1px 1000px; }
+
+    .bg-primary-blue{ background-color:var(--color-blue); }
+    .text-secondary-orange{ color:var(--color-orange); }
+    .glass-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 6px 24px rgba(0,0,0,0.25);
+    }
+    @supports (backdrop-filter:blur(5px)){
+      .glass-card{ backdrop-filter:blur(5px); }
+    }
+
+    .hot-metal-bg{
+      position:relative;
+      background:linear-gradient(135deg,var(--color-dark-bg) 0%,#0a0a0a 100%);
+    }
+    .hot-metal-bg::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 10% 20%,rgba(255,138,39,0.10) 0%,transparent 50%),
+                 radial-gradient(circle at 80% 90%,rgba(255,138,39,0.05) 0%,transparent 50%);
+      animation:pulse-glow 18s infinite ease-in-out;
+      z-index:-1;
+    }
+    @keyframes pulse-glow{
+      0%{opacity:.5;transform:scale(1);}
+      50%{opacity:.8;transform:scale(1.05);}
+      100%{opacity:.5;transform:scale(1);}
+    }
+
+    .logo-link img{height:10rem;transition:transform .3s;}
+    @media (max-width:768px){.logo-link img{height:4rem;}}
+
+    /* Botón flotante verde */
+    #float-whatsapp-btn{
+      position:fixed;bottom:20px;right:20px;width:60px;height:60px;
+      background:#25D366;color:#fff;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;z-index:9999;
+      box-shadow:0 10px 24px rgba(0,0,0,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    #float-whatsapp-btn:hover{
+      transform:translateY(-3px) scale(1.05);
+      box-shadow:0 14px 30px rgba(0,0,0,.35);
+    }
+
+    /* Ocultar otros botones de WhatsApp */
+    #nav-whatsapp-btn, #mobile-whatsapp-btn, #contact-whatsapp-link {display:none !important;}
+
+    /* Chispas de soldadura */
+    #spark-canvas{position:fixed;inset:0;pointer-events:none;z-index:9998;}
   </style>
 </head>
 <body class="hot-metal-bg">
+<canvas id="spark-canvas"></canvas>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-primary-blue bg-opacity-95 glass-card">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-primary-blue bg-opacity-95 glass-card shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20 md:h-28">
       <a href="#" class="logo-link flex items-center">
-        <img src="https://i.postimg.cc/yx2KSfQ2/logo.png" alt="Logo Cerrajería Totti" class="w-auto hover:scale-105">
-        <span class="sr-only">Cerrajería Totti</span>
+        <img src="https://i.postimg.cc/yx2KSfQ2/logo.png" alt="Logo Cerrajería Totti">
       </a>
-      <nav class="hidden md:flex space-x-8 items-center font-medium">
-        <a href="#servicios" class="hover:text-secondary-orange">Servicios</a>
-        <a href="#galeria" class="hover:text-secondary-orange">Trabajos</a>
-        <a href="#cotizar" class="hover:text-secondary-orange">Cotizar</a>
-        <a href="#faq" class="hover:text-secondary-orange">Preguntas</a>
-        <a href="#contacto" class="hover:text-secondary-orange">Contacto</a>
-        <a id="nav-whatsapp-btn" href="#" target="_blank" class="bg-secondary-orange text-white px-4 py-2 rounded-full font-bold flex items-center btn-hover-orange">
-          <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-        </a>
-      </nav>
-      <button id="menu-toggle" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-primary-blue bg-opacity-95 py-4 shadow-xl">
-      <nav class="flex flex-col space-y-3 px-6 pb-2 font-medium">
-        <a href="#servicios" class="py-2" onclick="closeMobileMenu()">Servicios</a>
-        <a href="#galeria" class="py-2" onclick="closeMobileMenu()">Trabajos</a>
-        <a href="#cotizar" class="py-2" onclick="closeMobileMenu()">Cotizar</a>
-        <a href="#faq" class="py-2" onclick="closeMobileMenu()">Preguntas</a>
-        <a href="#contacto" class="py-2" onclick="closeMobileMenu()">Contacto</a>
-        <a id="mobile-whatsapp-btn" href="#" target="_blank" class="bg-secondary-orange text-white px-4 py-2 rounded-full font-bold mt-2 flex items-center justify-center btn-hover-orange">
-          <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-        </a>
-      </nav>
+      <button id="menu-toggle" class="md:hidden text-white text-2xl hover:text-secondary-orange transition duration-300">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="hero" class="relative hot-metal-bg pt-20 pb-20 md:pt-40 md:pb-32 bg-cover bg-center"
-      style="background-image:url('https://i.postimg.cc/m26bKWMQ/f1678990_62e6_459b_acf1_86d75a2b7163.jpg');background-blend-mode:overlay;background-color:rgba(0,0,0,.75);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
-          Puertas y Ventanas Metálicas • <span class="text-secondary-orange">Soldadura Profesional</span>
-        </h1>
-        <p class="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">Diseño a medida, instalación segura y acabados de primera.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#cotizar" class="bg-secondary-orange text-white px-8 py-3 rounded-full text-lg font-bold btn-hover-orange shadow-2xl">Cotizar ahora</a>
-          <a href="#galeria" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-white hover:text-primary-blue">Ver trabajos</a>
-        </div>
+    <!-- Hero -->
+    <section id="hero" class="relative hot-metal-bg pt-20 pb-20 bg-cover bg-center"
+      style="background-image:url('https://i.postimg.cc/XJzSTHbd/f1678990_62e6_459b_acf1_86d75a2b7163.jpg');background-blend-mode:overlay;background-color:rgba(0,0,0,0.75);">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl font-extrabold mb-4">Puertas y Ventanas Metálicas <span class="text-secondary-orange">Profesionales</span></h1>
+        <p class="text-xl text-gray-300 mb-8">Diseño a medida, instalación segura y acabados de primera.</p>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-16 md:py-24 bg-gray-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Nuestros <span class="text-secondary-orange">Servicios</span> Expertos</h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Experiencia en metalurgia y cerrajería estructural para proyectos residenciales, comerciales e industriales.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-door-closed text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Puertas y Portones</h3>
-            <p class="text-gray-300">Corredizos, seccionales y puertas de seguridad.</p>
-          </div>
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-window-restore text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Ventanas y Rejas</h3>
-            <p class="text-gray-300">Modernas, elegantes y anti-intrusión.</p>
-          </div>
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-warehouse text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Techos y Estructuras</h3>
-            <p class="text-gray-300">Galpones, cubiertas, losas metálicas y cerramientos.</p>
-          </div>
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-stairs text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Escaleras y Barandas</h3>
-            <p class="text-gray-300">Interiores y exteriores, seguras y estéticas.</p>
-          </div>
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-truck-moving text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Carrocerías y Corrales</h3>
-            <p class="text-gray-300">Carrocerías para vehículos y corrales metálicos.</p>
-          </div>
-          <div class="p-6 rounded-xl glass-card text-center service-card hover:bg-gray-800 transition">
-            <i class="fas fa-fire-extinguisher text-5xl text-white service-icon mb-4"></i>
-            <h3 class="text-xl font-bold mb-2 text-secondary-orange">Mantenimiento y Soldadura</h3>
-            <p class="text-gray-300">TIG, MIG, Eléctrica y oxicorte.</p>
-          </div>
-        </div>
-      </div>
+    <!-- Servicios -->
+    <section id="servicios" class="py-16 bg-gray-900 text-center">
+      <h2 class="text-4xl font-bold mb-8">Nuestros <span class="text-secondary-orange">Servicios</span></h2>
+      <p class="text-gray-400 mb-8">Soldadura eléctrica, TIG, MIG y oxicorte.</p>
     </section>
 
-    <!-- ¿POR QUÉ ELEGIRNOS? -->
-    <section id="why-us" class="py-16 md:py-24 bg-primary-blue">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-white">¿Por Qué <span class="text-secondary-orange">Elegirnos</span>?</h2>
-        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">Nuestros pilares garantizan la calidad y el éxito de su proyecto.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-white p-6 rounded-xl text-center shadow-xl"><i class="fas fa-cogs text-4xl text-secondary-orange mb-3"></i><h3 class="text-xl font-bold text-primary-blue mb-2">Precisión</h3><p class="text-gray-700">Medidas exactas y acabados de ingeniería.</p></div>
-          <div class="bg-white p-6 rounded-xl text-center shadow-xl"><i class="fas fa-medal text-4xl text-secondary-orange mb-3"></i><h3 class="text-xl font-bold text-primary-blue mb-2">Experiencia</h3><p class="text-gray-700">Más de 10 años con soluciones probadas.</p></div>
-          <div class="bg-white p-6 rounded-xl text-center shadow-xl"><i class="fas fa-shield-alt text-4xl text-secondary-orange mb-3"></i><h3 class="text-xl font-bold text-primary-blue mb-2">Durabilidad</h3><p class="text-gray-700">Materiales de alta calidad y soldaduras resistentes.</p></div>
-          <div class="bg-white p-6 rounded-xl text-center shadow-xl"><i class="fas fa-calendar-check text-4xl text-secondary-orange mb-3"></i><h3 class="text-xl font-bold text-primary-blue mb-2">Cumplimiento</h3><p class="text-gray-700">Entrega en tiempo y forma acordados.</p></div>
-        </div>
-      </div>
+    <!-- Galería -->
+    <section id="galeria" class="py-16 bg-gray-800 text-center">
+      <h2 class="text-4xl font-bold mb-8">Galería de <span class="text-secondary-orange">Trabajos</span></h2>
     </section>
 
-    <!-- COTIZAR -->
-    <section id="cotizar" class="py-16 md:py-24 bg-gray-900 hot-metal-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Solicita tu <span class="text-secondary-orange">Cotización</span></h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Cuéntanos sobre tu proyecto y te responderemos por WhatsApp.</p>
-        <form id="quote-form" class="max-w-3xl mx-auto p-8 rounded-xl glass-card">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <input id="nombre" class="input" type="text" placeholder="Nombre completo" required>
-            <input id="telefono" class="input" type="tel" placeholder="Teléfono (+593...)" required>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <select id="servicio" class="input" required>
-              <option value="" disabled selected>Selecciona el Servicio*</option>
-              <option>Puertas y Portones</option><option>Ventanas y Rejas</option><option>Techos y Estructuras</option>
-              <option>Escaleras y Barandas</option><option>Carrocerías y Corrales</option><option>Reparación/Mantenimiento</option><option>Otro proyecto metálico</option>
-            </select>
-            <input id="ubicacion" class="input" type="text" placeholder="Ubicación (Ciudad/Sector)" required>
-          </div>
-          <div class="grid grid-cols-2 gap-6 mb-6">
-            <input id="medidas" class="input" type="text" placeholder="Medidas aprox. (Ej: 3×2 m)">
-            <input id="material" class="input" type="text" placeholder="Material (Ej: Acero, Aluminio)">
-          </div>
-          <textarea id="descripcion" class="input" rows="4" placeholder="Describe tu proyecto: detalles, estilo, urgencia..." required></textarea>
-          <button type="submit" class="w-full bg-secondary-orange text-white px-6 py-3 mt-6 rounded-full text-xl font-bold btn-hover-orange flex items-center justify-center shadow-lg">
-            <i class="fab fa-whatsapp text-2xl mr-3"></i> Enviar Cotización a WhatsApp
-          </button>
-          <p class="text-center text-sm text-gray-500 mt-4">*Se abrirá WhatsApp con los datos del formulario.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- GALERÍA (7 imágenes distintas) -->
-    <section id="galeria" class="py-16 md:py-24 bg-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Galería de <span class="text-secondary-orange">Trabajos</span></h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">La calidad de nuestro trabajo es nuestra mejor carta de presentación.</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <img src="https://i.postimg.cc/RVbM2xfR/68f304b9_5a7b_4b94_9f75_f003a0f36d14.jpg" data-img-url="https://i.postimg.cc/RVbM2xfR/68f304b9_5a7b_4b94_9f75_f003a0f36d14.jpg" alt="Trabajo 1" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/c4JxDLKg/6cb6e315_6fea_4b25_a579_b622f25b29cb.jpg" data-img-url="https://i.postimg.cc/c4JxDLKg/6cb6e315_6fea_4b25_a579_b622f25b29cb.jpg" alt="Trabajo 2" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/ZKDTXz38/89c9bc52_9e02_477a_82d8_93eea29036aa.jpg" data-img-url="https://i.postimg.cc/ZKDTXz38/89c9bc52_9e02_477a_82d8_93eea29036aa.jpg" alt="Trabajo 3" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/15zmW3gV/9306c3e7_a81e_4f9a_94a0_918e235ca256.jpg" data-img-url="https://i.postimg.cc/15zmW3gV/9306c3e7_a81e_4f9a_94a0_918e235ca256.jpg" alt="Trabajo 4" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/8PCpyzF7/b3cb8058_c4c0_45ac_b675_2f945f8d2aab.jpg" data-img-url="https://i.postimg.cc/8PCpyzF7/b3cb8058_c4c0_45ac_b675_2f945f8d2aab.jpg" alt="Trabajo 5" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/DyzvCwWW/b50613b9_5c45_49ee_b5f3_5e8e65821faf.jpg" data-img-url="https://i.postimg.cc/DyzvCwWW/b50613b9_5c45_49ee_b5f3_5e8e65821faf.jpg" alt="Trabajo 6" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-          <img src="https://i.postimg.cc/m26bKWMQ/f1678990_62e6_459b_acf1_86d75a2b7163.jpg" data-img-url="https://i.postimg.cc/m26bKWMQ/f1678990_62e6_459b_acf1_86d75a2b7163.jpg" alt="Trabajo 7" class="gallery-item cursor-pointer hover:scale-[1.02] transition"/>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODAL GALERÍA -->
-    <div id="gallery-modal" class="fixed inset-0 flex items-center justify-center p-4" onclick="closeModal()">
-      <img id="modal-image" src="" alt="Trabajo en detalle">
-    </div>
-
-    <!-- VIDEO -->
-    <section id="video" class="py-16 md:py-24 hot-metal-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">Vea Nuestro <span class="text-secondary-orange">Trabajo</span> en Acción</h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Un breve vistazo al proceso de fabricación y la calidad de nuestra soldadura.</p>
-        <div class="relative w-full max-w-4xl mx-auto aspect-video rounded-xl shadow-2xl shadow-secondary-orange/50 overflow-hidden">
-          <iframe class="w-full h-full"
-            src="https://www.youtube.com/embed/5H-7N_1J320?si=WpY-Hw-c-5g_9-uQ"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 md:py-24 bg-gray-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4">Preguntas <span class="text-secondary-orange">Frecuentes</span></h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Resolvemos las dudas más comunes antes de iniciar tu proyecto.</p>
-        <div class="max-w-3xl mx-auto space-y-4">
-          <div class="glass-card rounded-lg overflow-hidden">
-            <button class="faq-toggle w-full flex justify-between items-center p-5 font-bold text-left text-lg hover:bg-white/10 transition">
-              <span>¿Qué tipos de soldadura manejan?</span><i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-content hidden p-5 pt-0 text-gray-300 border-t border-gray-700">
-              <p>Eléctrica (SMAW), TIG (GTAW), MIG (GMAW) y oxicorte.</p>
-            </div>
-          </div>
-          <div class="glass-card rounded-lg overflow-hidden">
-            <button class="faq-toggle w-full flex justify-between items-center p-5 font-bold text-left text-lg hover:bg:white/10 transition">
-              <span>¿Ofrecen diseño personalizado?</span><i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-content hidden p-5 pt-0 text-gray-300 border-t border-gray-700">
-              <p>Sí, trabajamos bajo diseño a medida según tus ideas y espacio.</p>
-            </div>
-          </div>
-          <div class="glass-card rounded-lg overflow-hidden">
-            <button class="faq-toggle w-full flex justify-between items-center p-5 font-bold text-left text-lg hover:bg:white/10 transition">
-              <span>¿Dónde están ubicados?</span><i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-content hidden p-5 pt-0 text-gray-300 border-t border-gray-700">
-              <p>Barrio Integración Social, Atahualpa entre Brasil y Venezuela, Shushufindi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-16 md:py-24 bg-primary-blue hot-metal-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-white">Hablemos de tu <span class="text-secondary-orange">Proyecto</span></h2>
-        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">Contáctanos directamente para empezar a construir tu visión con metal.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
-          <div class="p-6 rounded-xl bg-primary-blue/70 glass-card">
-            <i class="fas fa-map-marker-alt text-4xl text-secondary-orange mb-3"></i>
-            <h3 class="text-xl font-bold mb-2 text-white">Dirección</h3>
-            <p class="text-gray-300">Barrio Integración Social, Atahualpa entre Brasil y Venezuela, Shushufindi, Ecuador.</p>
-          </div>
-          <div class="p-6 rounded-xl bg-primary-blue/70 glass-card">
-            <i class="fas fa-phone text-4xl text-secondary-orange mb-3"></i>
-            <h3 class="text-xl font-bold mb-2 text-white">WhatsApp / Llamadas</h3>
-            <a id="contact-whatsapp-link" href="#" class="text-gray-300 hover:text-secondary-orange block">+593 96 988 1264</a>
-            <a href="tel:+593969881264" class="text-gray-300 hover:text-secondary-orange block">Llamar Ahora</a>
-          </div>
-          <div class="p-6 rounded-xl bg-primary-blue/70 glass-card">
-            <i class="fas fa-envelope text-4xl text-secondary-orange mb-3"></i>
-            <h3 class="text-xl font-bold mb-2 text-white">Correo</h3>
-            <a href="mailto:titocarvajal1000@gmail.com" class="text-gray-300 hover:text-secondary-orange block">titocarvajal1000@gmail.com</a>
-            <div class="mt-3 space-x-4">
-              <a href="#" class="text-2xl text-white hover:text-secondary-orange"><i class="fab fa-facebook-square"></i></a>
-              <a href="#" class="text-2xl text-white hover:text-secondary-orange"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Contacto -->
+    <section id="contacto" class="py-16 bg-primary-blue text-center">
+      <h2 class="text-3xl font-extrabold mb-4 text-white">Contáctanos</h2>
+      <p class="text-gray-300">Shushufindi - Barrio Integración Social</p>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-950 py-8 border-t-4 border-secondary-orange/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-      <p class="mb-2">&copy; 2024 Cerrajería Totti. Todos los derechos reservados. | Propietario: Tito Carvajal.</p>
-      <p class="text-xs">Especialistas en soldadura eléctrica, TIG, MIG, oxicorte y estructuras metálicas.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-gray-950 py-8 border-t-4 border-secondary-orange/50 text-center text-gray-500">
+    <p>&copy; 2024 Cerrajería Totti. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a id="float-whatsapp-btn" href="#" target="_blank" class="fixed bottom-6 right-6 z-50 bg-secondary-orange text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition">
+  <!-- Botón flotante único -->
+  <a id="float-whatsapp-btn" href="#" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JS -->
+  <!-- Scripts -->
   <script>
-    /* WhatsApp: mensaje corto para botones */
-    const WHATSAPP_NUMBER = '593969881264';
-    const SHORT_MSG = `Hola, me interesa una cotización.
-Servicio: ________
-Ubicación: ________
-¿Tiempo de entrega y formas de pago?`;
-    const SHORT_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(SHORT_MSG)}`;
+  // Asignar número WhatsApp
+  (function(){
+    const PHONE = '593969881264';
+    const MSG = '¡Hola Toti! 👋 Vi tu página y quiero una cotización o consulta, por favor.';
+    const URL = `https://wa.me/${PHONE}?text=${encodeURIComponent(MSG)}`;
+    const fab = document.getElementById('float-whatsapp-btn');
+    if(fab) fab.href = URL;
+  })();
 
-    document.addEventListener('DOMContentLoaded', () => {
-      ['nav-whatsapp-btn','mobile-whatsapp-btn','float-whatsapp-btn','contact-whatsapp-link']
-        .forEach(id => { const el=document.getElementById(id); if(el) el.href = SHORT_URL; });
-
-      // Acordeón FAQ
-      document.querySelectorAll('.faq-toggle').forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          const c = btn.nextElementSibling, i = btn.querySelector('i');
-          const open = !c.classList.contains('hidden');
-          document.querySelectorAll('.faq-content').forEach(x=>x.classList.add('hidden'));
-          document.querySelectorAll('.faq-toggle i').forEach(x=>x.classList.remove('fa-chevron-up'));
-          document.querySelectorAll('.faq-toggle i').forEach(x=>x.classList.add('fa-chevron-down'));
-          if(open){ c.classList.add('hidden'); i.classList.remove('fa-chevron-up'); i.classList.add('fa-chevron-down'); }
-          else { c.classList.remove('hidden'); i.classList.remove('fa-chevron-down'); i.classList.add('fa-chevron-up'); }
-        });
-      });
+  // Chispas de soldadura
+  (function(){
+    const cvs = document.getElementById('spark-canvas');
+    const ctx = cvs.getContext('2d');
+    let W = cvs.width = innerWidth, H = cvs.height = innerHeight;
+    const sparks = [];
+    const ORANGE='rgba(255,138,39,',WHITE='rgba(255,255,255,';
+    addEventListener('resize',()=>{W=cvs.width=innerWidth;H=cvs.height=innerHeight;},{passive:true});
+    function burst(x,y,n=15,power=2.2){
+      for(let i=0;i<n;i++){
+        const a=Math.random()*Math.PI*2,v=power*(.6+Math.random()*0.8);
+        sparks.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1,life:300+Math.random()*200,r:1.5+Math.random()*2,g:Math.random()<.25});
+      }
+    }
+    addEventListener('mousemove',e=>burst(e.clientX,e.clientY,5,1.2),{passive:true});
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mousedown',e=>{
+        const t=e.currentTarget.getBoundingClientRect();
+        burst(t.left+t.width/2,t.top+t.height/2,24,3);
+      },{passive:true});
+      el.addEventListener('touchstart',e=>{
+        const t=e.currentTarget.getBoundingClientRect();
+        burst(t.left+t.width/2,t.top+t.height/2,24,3);
+      },{passive:true});
     });
-
-    // Menú móvil
-    const menuToggle=document.getElementById('menu-toggle'); const mobileMenu=document.getElementById('mobile-menu');
-    function toggleMobileMenu(){ mobileMenu.classList.toggle('hidden'); const i=menuToggle.querySelector('i'); i.classList.toggle('fa-bars'); i.classList.toggle('fa-times'); }
-    function closeMobileMenu(){ if(!mobileMenu.classList.contains('hidden')) toggleMobileMenu(); }
-    menuToggle.addEventListener('click', toggleMobileMenu);
-
-    // Formulario -> WhatsApp (mensaje lleno). SIN passive en submit.
-    document.getElementById('quote-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const v = id => (document.getElementById(id).value || '').trim() || '—';
-      const msg = `*COTIZACIÓN RÁPIDA - Cerrajería Totti*\n\n`+
-                  `*Datos del Solicitante:*\n`+
-                  `Nombre: ${v('nombre')}\n`+
-                  `Teléfono: ${v('telefono')}\n`+
-                  `Ubicación: ${v('ubicacion')}\n\n`+
-                  `*Detalles del Proyecto:*\n`+
-                  `Servicio: ${v('servicio')}\n`+
-                  `Medidas Aprox.: ${v('medidas')}\n`+
-                  `Material Deseado: ${v('material')}\n`+
-                  `Descripción: ${v('descripcion')}\n\n`+
-                  `Por favor, envíame la cotización. ¡Gracias!`;
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-
-    // Galería modal
-    const modal=document.getElementById('gallery-modal'), modalImg=document.getElementById('modal-image');
-    document.querySelectorAll('.gallery-item').forEach(el=>{
-      el.addEventListener('click', ()=>{ modalImg.src = el.dataset.imgUrl; modal.style.display='flex'; document.body.style.overflow='hidden'; });
-    });
-    function closeModal(){ modal.style.display='none'; document.body.style.overflow='auto'; }
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.style.display==='flex') closeModal(); });
+    function loop(){
+      ctx.clearRect(0,0,W,H);
+      for(let i=sparks.length-1;i>=0;i--){
+        const p=sparks[i];
+        p.life-=16;if(p.life<=0){sparks.splice(i,1);continue;}
+        p.x+=p.vx;p.y+=p.vy;p.vy+=0.06;p.vx*=0.985;p.vy*=0.985;
+        const alpha=Math.max(0,p.life/400);
+        ctx.beginPath();
+        ctx.fillStyle=(p.g?WHITE:ORANGE)+alpha+')';
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  })();
   </script>
 </body>
 </html>
