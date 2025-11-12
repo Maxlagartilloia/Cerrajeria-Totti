@@ -9,16 +9,17 @@
   <meta name="description" content="Diseño a medida, instalación segura y acabados de primera en estructuras metálicas, portones y soldadura profesional (TIG, MIG, Eléctrica) en Shushufindi, Ecuador.">
   <meta name="keywords" content="cerrajería, soldadura, estructuras metálicas, puertas de seguridad, portones, ventanas, TIG, MIG, Shushufindi, Tito Carvajal">
   <meta name="author" content="Tito Carvajal - Cerrajería Totti">
+
   <!-- ===== Vista previa para WhatsApp y redes ===== -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cerrajeriatotti.crisslombeida.com/">
-<meta property="og:title" content="Cerrajería Totti | Soldadura y Estructuras Metálicas">
-<meta property="og:description" content="Puertas, portones, techos, cerramientos y estructuras metálicas con soldadura profesional. ¡Cotiza directo por WhatsApp!">
-<meta property="og:image" content="https://i.postimg.cc/yx2KSfQ2/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_EC">
-<meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cerrajeriatotti.crisslombeida.com/">
+  <meta property="og:title" content="Cerrajería Totti | Soldadura y Estructuras Metálicas">
+  <meta property="og:description" content="Puertas, portones, techos, cerramientos y estructuras metálicas con soldadura profesional. ¡Cotiza directo por WhatsApp!">
+  <meta property="og:image" content="https://i.postimg.cc/yx2KSfQ2/logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fuentes / utilidades -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -144,15 +145,12 @@
     /* Galería: evita layout shift al reservar proporción */
     .gallery-item{ aspect-ratio:4/3; object-fit:cover; }
 
-    /* Ajuste altura header para móvil (más liviano) */
-    /* Cambiamos la altura directa en el markup a h-20 (ver abajo) */
   </style>
 </head>
 <body class="hot-metal-bg">
 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-primary-blue bg-opacity-95 glass-card shadow-lg">
-    <!-- Altura ajustada: h-20 en móvil para menor trabajo de composición -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20 md:h-28">
       <a href="#" class="logo-link flex items-center">
         <img src="https://i.postimg.cc/yx2KSfQ2/logo.png" alt="Logo Cerrajería Totti" class="w-auto transition duration-300 transform hover:scale-105">
@@ -166,9 +164,7 @@
         <a href="#cotizar" class="text-white hover:text-secondary-orange transition duration-300">Cotizar</a>
         <a href="#faq" class="text-white hover:text-secondary-orange transition duration-300">Preguntas</a>
         <a href="#contacto" class="text-white hover:text-secondary-orange transition duration-300">Contacto</a>
-        <a id="nav-whatsapp-btn" href="#" target="_blank" class="bg-secondary-orange text-white px-4 py-2 rounded-full font-bold transition duration-300 btn-hover-orange flex items-center">
-          <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-        </a>
+        <!-- Eliminado el botón de WhatsApp del header -->
       </nav>
 
       <!-- Menú móvil -->
@@ -185,9 +181,7 @@
         <a href="#cotizar" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Cotizar</a>
         <a href="#faq" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Preguntas</a>
         <a href="#contacto" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Contacto</a>
-        <a id="mobile-whatsapp-btn" href="#" target="_blank" class="bg-secondary-orange text-white px-4 py-2 rounded-full font-bold mt-4 transition duration-300 btn-hover-orange flex items-center justify-center">
-          <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-        </a>
+        <!-- Eliminado el botón de WhatsApp del menú móvil -->
       </nav>
     </div>
   </header>
@@ -362,34 +356,34 @@
       </div>
     </div>
 
-   <!-- Video tipo teléfono -->
-<section id="video" class="py-16 md:py-24 hot-metal-bg">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">
-      Vea Nuestro <span class="text-secondary-orange">Trabajo</span> en Acción
-    </h2>
-    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-      Un breve vistazo al proceso de fabricación y la calidad de nuestra soldadura.
-    </p>
+    <!-- Video tipo teléfono -->
+    <section id="video" class="py-16 md:py-24 hot-metal-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">
+          Vea Nuestro <span class="text-secondary-orange">Trabajo</span> en Acción
+        </h2>
+        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Un breve vistazo al proceso de fabricación y la calidad de nuestra soldadura.
+        </p>
 
-    <!-- Marco tipo teléfono -->
-    <div class="relative mx-auto w-[260px] sm:w-[300px] md:w-[340px] rounded-[2rem] border-[12px] border-gray-900 shadow-[0_0_30px_rgba(255,138,39,0.5)] overflow-hidden bg-black">
-      <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gray-700 rounded-full z-10"></div>
-      <iframe 
-        src="https://www.youtube.com/embed/AQW3ASfBJ_c?autoplay=0&rel=0&modestbranding=1&playsinline=1"
-        class="w-full aspect-[9/16] rounded-[1.8rem] border-none"
-        title="Cerrajería Totti - Trabajos"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+        <!-- Marco tipo teléfono -->
+        <div class="relative mx-auto w-[260px] sm:w-[300px] md:w-[340px] rounded-[2rem] border-[12px] border-gray-900 shadow-[0_0_30px_rgba(255,138,39,0.5)] overflow-hidden bg-black">
+          <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gray-700 rounded-full z-10"></div>
+          <iframe 
+            src="https://www.youtube.com/embed/AQW3ASfBJ_c?autoplay=0&rel=0&modestbranding=1&playsinline=1"
+            class="w-full aspect-[9/16] rounded-[1.8rem] border-none"
+            title="Cerrajería Totti - Trabajos"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
 
-    <p class="text-gray-500 text-sm mt-6 italic">
-      *Video demostrativo grabado por el equipo de Cerrajería Totti*
-    </p>
-  </div>
-</section>
+        <p class="text-gray-500 text-sm mt-6 italic">
+          *Video demostrativo grabado por el equipo de Cerrajería Totti*
+        </p>
+      </div>
+    </section>
 
     <!-- FAQ -->
     <section id="faq" class="py-16 md:py-24 bg-gray-900">
@@ -447,8 +441,8 @@
           <div class="p-6 rounded-xl bg-primary-blue/70 glass-card">
             <i class="fas fa-phone text-4xl text-secondary-orange mb-3"></i>
             <h3 class="text-xl font-bold mb-2 text-white">WhatsApp / Llamadas</h3>
-            <a id="contact-whatsapp-link" href="#" class="text-gray-300 hover:text-secondary-orange transition block">+593 96 988 1264</a>
             <a href="tel:+593969881264" class="text-gray-300 hover:text-secondary-orange transition block">Llamar Ahora</a>
+            <span class="text-gray-300 block">+593 96 988 1264</span>
           </div>
 
           <div class="p-6 rounded-xl bg-primary-blue/70 glass-card">
@@ -473,33 +467,17 @@
     </div>
   </footer>
 
-  <!-- Botón Flotante WhatsApp -->
-<a id="float-whatsapp-btn" href="#" target="_blank"
-   class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl transition duration-300 hover:bg-[#1ebe5d] hover:scale-110">
-  <i class="fab fa-whatsapp"></i>
-</a>
-</script>
-    <!-- Botón Flotante WhatsApp -->
-  <a id="float-whatsapp-btn" href="#" target="_blank" class="fixed bottom-6 right-6 z-50 bg-secondary-orange text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl transition duration-300 hover:bg-[#ffaa60] hover:scale-110">
+  <!-- Botón Flotante WhatsApp (ÚNICO, verde) -->
+  <a id="float-whatsapp-btn"
+     href="https://wa.me/593969881264?text=%C2%A1Hola%20Toti!%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20web%20y%20me%20parece%20un%20excelente%20servicio.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20y%20cotizar%20un%20trabajo%2C%20por%20favor."
+     target="_blank"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl transition duration-300 hover:bg-[#1ebe5d] hover:scale-110">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- =============== JS PRINCIPAL =============== -->
   <script>
     const WHATSAPP_NUMBER = '593969881264';
-
-    // === WhatsApp (mensajes por botón) ===
-    const MSG_HEADER = `Hola, Toti 👋 ¿cómo estás? Vi tu página y me gustaría cotizar un trabajo o conocer tus servicios.`;
-    const MSG_GENERIC = `¡Hola! 👋 Vi tu página de Cerrajería Totti y me gustaría hacer una consulta o cotización, por favor.`;
-    const URL_HEADER  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_HEADER)}`;
-    const URL_GENERIC = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_GENERIC)}`;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('nav-whatsapp-btn').href = URL_HEADER;
-      document.getElementById('mobile-whatsapp-btn').href = URL_GENERIC;
-      document.getElementById('float n-whatsapp-btn').href = URL_GENERIC;
-      document.getElementById('contact-whatsapp-link').href = URL_GENERIC;
-    });
 
     /* === Menú móvil === */
     const menuToggle = document.getElementById('menu-toggle');
@@ -526,20 +504,17 @@
       const ubicacion= document.getElementById('ubicacion').value;
       const descripcion = document.getElementById('descripcion').value;
 
-      const quoteMessage = `*COTIZACIÓN RÁPIDA - Cerrajería Totti*
-
-*Datos del Solicitante:*
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Ubicación: ${ubicacion}
-
-*Detalles del Proyecto:*
-Servicio: ${servicio}
-Medidas Aprox.: ${medidas || 'No especificadas'}
-Material Deseado: ${material || 'No especificado'}
-Descripción: ${descripcion}
-
-Por favor, envíame la cotización. ¡Gracias!`;
+      const quoteMessage = `*COTIZACIÓN RÁPIDA - Cerrajería Totti*\n\n` +
+`*Datos del Solicitante:*\n` +
+`Nombre: ${nombre}\n` +
+`Teléfono: ${telefono}\n` +
+`Ubicación: ${ubicacion}\n\n` +
+`*Detalles del Proyecto:*\n` +
+`Servicio: ${servicio}\n` +
+`Medidas Aprox.: ${medidas || 'No especificadas'}\n` +
+`Material Deseado: ${material || 'No especificado'}\n` +
+`Descripción: ${descripcion}\n\n` +
+`Te contacté porque vi tu página web y me gustó tu servicio. Por favor, envíame la cotización. ¡Gracias!`;
 
       const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(quoteMessage)}`;
       window.open(waUrl, '_blank');
