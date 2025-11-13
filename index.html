@@ -92,7 +92,21 @@
     }
     /* Pausa la animación durante el gesto de scroll y para usuarios con reduced motion */
     .is-scrolling .hot-metal-bg::before{ animation:none !important; }
-    @media (max-width:768px){ .hot-metal-bg::before{ animation:none !important; } }
+
+    /* LOGO EN TELÉFONO (grande) */
+    @media (max-width:768px){
+      .logo-link img{
+        height:06rem !important;
+      }
+    }
+
+    /* LOGO EN TABLET / PC (tamaño elegante) */
+    @media (min-width:769px){
+      .logo-link img{
+        height:6rem !important;
+        max-height:6rem !important;
+      }
+    }
     @media (prefers-reduced-motion:reduce){ .hot-metal-bg::before{ animation:none !important; } }
 
     /* Hover botón naranja */
@@ -130,11 +144,45 @@
       z-index:100; background-color:rgba(0,0,0,0.7);
       transition:opacity .3s ease; display:none;
     }
-    #modal-content-wrapper{ transform-style:preserve-3d; perspective:1000px; }
+    #modal-content-wrapper{
+      transform-style:preserve-3d;
+      perspective:1000px;
+    }
     #modal-image{
-      max-height:90vh; max-width:90vw;
+      max-height:90vh;
+      max-width:90vw;
       box-shadow:0 25px 50px -12px rgba(255,138,39,0.5);
-      transform:rotateY(0deg); transition:transform .5s ease;
+      transform:rotateY(0deg);
+      transition:transform .5s ease;
+    }
+
+    /* Flechas del modal */
+    .modal-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:3rem;
+      height:3rem;
+      border-radius:9999px;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:1.5rem;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,0.3);
+      backdrop-filter:blur(4px);
+    }
+    .modal-arrow:hover{
+      background:rgba(255,138,39,0.8);
+    }
+    #modal-prev{ left:-3.5rem; }
+    #modal-next{ right:-3.5rem; }
+
+    @media (max-width:640px){
+      #modal-prev{ left:0.5rem; }
+      #modal-next{ right:0.5rem; }
     }
 
     /* Scrollbars */
@@ -153,7 +201,7 @@
   <header class="sticky top-0 z-50 bg-primary-blue bg-opacity-95 glass-card shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20 md:h-28">
       <a href="#" class="logo-link flex items-center">
-        <img src="https://i.postimg.cc/yx2KSfQ2/logo.png" alt="Logo Cerrajería Totti" class="w-auto transition duration-300 transform hover:scale-105">
+        <img src="https://i.postimg.cc/qvK9Rqhw/IMG-0055.webp" alt="Logo Cerrajería Totti" class="w-auto transition duration-300 transform hover:scale-105">
         <span class="sr-only">Cerrajería Totti</span>
       </a>
 
@@ -164,7 +212,6 @@
         <a href="#cotizar" class="text-white hover:text-secondary-orange transition duration-300">Cotizar</a>
         <a href="#faq" class="text-white hover:text-secondary-orange transition duration-300">Preguntas</a>
         <a href="#contacto" class="text-white hover:text-secondary-orange transition duration-300">Contacto</a>
-        <!-- Eliminado el botón de WhatsApp del header -->
       </nav>
 
       <!-- Menú móvil -->
@@ -181,7 +228,6 @@
         <a href="#cotizar" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Cotizar</a>
         <a href="#faq" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Preguntas</a>
         <a href="#contacto" class="text-white hover:text-secondary-orange transition duration-300 py-2" onclick="closeMobileMenu()">Contacto</a>
-        <!-- Eliminado el botón de WhatsApp del menú móvil -->
       </nav>
     </div>
   </header>
@@ -346,10 +392,19 @@
       </div>
     </section>
 
-    <!-- Modal Galería -->
+    <!-- Modal Galería mejorado -->
     <div id="gallery-modal" class="fixed inset-0 flex items-center justify-center p-4" onclick="closeModal()">
-      <div id="modal-content-wrapper" class="relative">
-        <img id="modal-image" src="" alt="Trabajo en detalle" class="rounded-xl" onclick="event.stopPropagation()">
+      <div id="modal-content-wrapper" class="relative" onclick="event.stopPropagation()">
+        <button id="modal-prev" class="modal-arrow">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <img id="modal-image" src="" alt="Trabajo en detalle" class="rounded-xl">
+
+        <button id="modal-next" class="modal-arrow">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
         <button class="absolute top-4 right-4 text-white text-3xl hover:text-secondary-orange transition duration-300" onclick="closeModal()">
           <i class="fas fa-times"></i>
         </button>
@@ -520,14 +575,35 @@
       window.open(waUrl, '_blank');
     }, { passive:true });
 
-    /* === Modal Galería === */
+    /* === Modal Galería con navegación === */
     const modal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
     const galleryItems = document.querySelectorAll('.gallery-item');
     const modalWrapper = document.getElementById('modal-content-wrapper');
+    const prevBtn = document.getElementById('modal-prev');
+    const nextBtn = document.getElementById('modal-next');
 
-    function openModal(imgUrl){
-      modalImage.src = imgUrl;
+    let galleryUrls = [];
+    let currentIndex = 0;
+
+    galleryItems.forEach((item, index)=>{
+      const url = item.getAttribute('data-img-url');
+      galleryUrls.push(url);
+      item.addEventListener('click', ()=>{
+        openModal(index);
+      }, { passive:true });
+    });
+
+    function showImage(index){
+      if(galleryUrls.length === 0) return;
+      if(index < 0) index = galleryUrls.length - 1;
+      if(index >= galleryUrls.length) index = 0;
+      currentIndex = index;
+      modalImage.src = galleryUrls[currentIndex];
+    }
+
+    function openModal(index){
+      showImage(index);
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
       setTimeout(()=>{
@@ -535,6 +611,7 @@
         modalImage.style.transform = 'rotateY(-10deg)';
       },50);
     }
+
     function closeModal(){
       modalWrapper.style.transform = 'rotateY(0deg)';
       modalImage.style.transform = 'rotateY(0deg)';
@@ -543,11 +620,57 @@
         document.body.style.overflow = 'auto';
       },500);
     }
-    galleryItems.forEach(item=>{
-      item.addEventListener('click', ()=> openModal(item.getAttribute('data-img-url')), { passive:true });
+
+    function showNext(){
+      showImage(currentIndex + 1);
+    }
+    function showPrev(){
+      showImage(currentIndex - 1);
+    }
+
+    prevBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      showPrev();
     });
+
+    nextBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      showNext();
+    });
+
+    // Swipe en pantallas táctiles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleTouchStart(e){
+      touchStartX = e.changedTouches[0].screenX;
+    }
+    function handleTouchEnd(e){
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if(Math.abs(diff) > 50){
+        if(diff < 0){
+          showNext();   // swipe izquierda
+        }else{
+          showPrev();   // swipe derecha
+        }
+      }
+    }
+
+    modalImage.addEventListener('touchstart', handleTouchStart, { passive:true });
+    modalImage.addEventListener('touchend', handleTouchEnd, { passive:true });
+
+    // Cerrar con tecla ESC y navegar con flechas de teclado
     document.addEventListener('keydown', function(event){
-      if(event.key==='Escape' && modal.style.display==='flex'){ closeModal(); }
+      if(modal.style.display === 'flex'){
+        if(event.key === 'Escape'){
+          closeModal();
+        }else if(event.key === 'ArrowRight'){
+          showNext();
+        }else if(event.key === 'ArrowLeft'){
+          showPrev();
+        }
+      }
     });
 
     /* === FAQ acordeón === */
